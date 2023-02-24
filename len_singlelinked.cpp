@@ -57,6 +57,14 @@ public:
 	        cout<<temp->data<<" ";
 	        temp=temp->next;
 	    }
+	    cout<<endl;
+	}
+	void reverserecursive(node *nod){
+	    if(nod==NULL)
+	    return ;
+	        reverserecursive(nod->next);
+	        cout<<nod->data<<" ";
+	    
 	}
 };
 int main() {
@@ -69,5 +77,6 @@ int main() {
 	cout<<list.getlengthRecursive(list.head)<<endl;
 	list.reverse();
 	list.display();
+	list.reverserecursive(list.head);
 	return 0;
 }
