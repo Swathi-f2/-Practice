@@ -39,6 +39,25 @@ public:
 		return 1+getlengthRecursive(no->next);
 		
 	}
+	void reverse(){
+	    node*pnode=NULL;
+	    node*cnode=head;
+	    node*nnode=NULL;
+	    while(cnode!=NULL){
+	        nnode=cnode->next;
+	        cnode->next=pnode;
+	        pnode=cnode;
+	        cnode=nnode;
+	    }
+	    head=pnode;
+	}
+	void display(){
+	    node*temp=head;
+	    while(temp!=NULL){
+	        cout<<temp->data<<" ";
+	        temp=temp->next;
+	    }
+	}
 };
 int main() {
 	LinkedList list;
@@ -47,6 +66,8 @@ int main() {
 		list.insertNode();
 	}
 	cout<<list.getlengthiterative()<<endl;
-	cout<<list.getlengthRecursive(list.head);
+	cout<<list.getlengthRecursive(list.head)<<endl;
+	list.reverse();
+	list.display();
 	return 0;
 }
